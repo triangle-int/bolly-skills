@@ -2,17 +2,15 @@
 
 Community skills for [Bolly](https://github.com/triangle-int/bolly) — teach your companion new abilities.
 
+Skills follow the open [Agent Skills](https://agentskills.io) standard (`SKILL.md`).
+
 ## Browse
 
 Visit [bolly.triangleint.com/skills](https://bolly.triangleint.com/skills) to browse available skills.
 
-## Publishing a skill
+## Adding a skill to the registry
 
-1. Create a GitHub repo with:
-   - `skill.json` — manifest with `id`, `name`, `description`, `icon`
-   - `instructions.md` — the prompt fragment injected into your companion
-
-2. Open a PR to this repo adding your skill to `registry.json`:
+Open a PR adding an entry to `registry.json`. Skills can live in any GitHub repo — this registry just points to them.
 
 ```json
 {
@@ -20,34 +18,39 @@ Visit [bolly.triangleint.com/skills](https://bolly.triangleint.com/skills) to br
   "name": "Your Skill Name",
   "description": "What this skill teaches your companion to do.",
   "icon": "~",
-  "repo": "your-username/your-skill-repo",
+  "repo": "your-username/your-repo",
   "git_ref": "main",
-  "author": "Your Name"
+  "author": "Your Name",
+  "path": "skills/your-skill"
 }
 ```
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `id` | yes | Unique skill identifier |
+| `name` | yes | Display name |
+| `description` | yes | What the skill does |
+| `icon` | no | Single character icon |
+| `repo` | yes | GitHub repo (`owner/repo`) |
+| `git_ref` | no | Branch or tag (default: `main`) |
+| `author` | no | Author display name |
+| `path` | no | Subdirectory within the repo containing `SKILL.md` |
 
 ## Skill format
 
-### `skill.json`
+Each skill directory needs a `SKILL.md` file with YAML frontmatter:
 
-```json
-{
-  "id": "code-reviewer",
-  "name": "Code Reviewer",
-  "description": "Reviews code for bugs, style issues, and improvements.",
-  "icon": "~",
-  "enabled": true
-}
+```markdown
+---
+name: your-skill
+description: What this skill does and when to use it.
+---
+
+Instructions for the companion...
 ```
 
-### `instructions.md`
-
-A markdown file containing the prompt fragment that gets injected into the companion's system prompt when the skill is active. Write it as if you're teaching the companion a new behavior.
+See the full spec at [agentskills.io/specification](https://agentskills.io/specification).
 
 ## Installing skills
 
-From your Bolly instance's Skills tab, switch to **Browse** and click **Install** on any skill. Or install manually:
-
-```
-# Skills are stored in ~/.bolly/skills/{skill-id}/
-```
+From your Bolly instance's Skills tab, switch to **Browse** and click **Install**.

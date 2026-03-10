@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": "slidev",
+    "name": "Slidev Presentations",
+    "description": "Create and present web-based slides for developers using Markdown, Vue components, code highlighting, animations, and interactive features.",
+    "icon": "~",
+    "repo": "slidevjs/slidev",
+    "git_ref": "main",
+    "author": "Anthony Fu",
+    "path": "skills/slidev"
+  }
+]
