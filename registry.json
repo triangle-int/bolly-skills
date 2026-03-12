@@ -8,5 +8,15 @@
     "git_ref": "main",
     "author": "Anthony Fu",
     "path": "skills/slidev"
+  },
+  {
+    "id": "frontend-design",
+    "name": "Frontend Design",
+    "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics.",
+    "icon": "✦",
+    "repo": "anthropics/skills",
+    "git_ref": "main",
+    "author": "Anthropic",
+    "path": "skills/frontend-design"
   }
 ]
