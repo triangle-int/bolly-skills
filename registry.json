@@ -18,5 +18,15 @@
     "git_ref": "main",
     "author": "Anthropic",
     "path": "skills/frontend-design"
+  },
+  {
+    "id": "video-call",
+    "name": "Video Call",
+    "description": "Join Google Meet calls as a video avatar with real-time voice conversation and vision. Activate when user shares a meet.google.com link.",
+    "icon": "📞",
+    "repo": "triangle-int/video-call-skill",
+    "git_ref": "main",
+    "author": "Triangle Int",
+    "path": "."
   }
 ]
